@@ -1,0 +1,34 @@
+---
+# https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
+- hosts: all
+  become: yes
+  tasks:
+  - name: updating apt packages
+    apt:
+      update_cache: yes
+- hosts: app
+  become: yes
+  vars:
+    folderpath: /home/ansible/nodesetup
+  tasks:
+  - name: creating a directory
+    file: 
+      path: "{{ folderpath }}"
+      state: directory
+      mode: 0755
+  
+  - name: download nodejs package setup into directory and run it
+    command: "curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -"
+    args:
+      chdir: "{{ folderpath }}"
+  - name: installing nodejs
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items:
+     - nodejs
+     - build-essential
+
+      
+  
+      
