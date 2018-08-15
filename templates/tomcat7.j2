@@ -39,7 +39,7 @@ JAVA_OPTS="-Djava.awt.headless=true -Xmx128m -XX:+UseConcMarkSweepGC"
 # Location of the JVM temporary directory
 # WARNING: This directory will be destroyed and recreated at every startup !
 #JVM_TMP=/tmp/tomcat7-temp
-JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx"{{ xmx }}"m -XX:MaxPermSize="{{ maxpersize }}"m -XX:+UseConcMarkSweepGC"
+JAVA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Xmx{{ xmx }}m -XX:MaxPermSize={{ maxpersize }}m -XX:+UseConcMarkSweepGC"
 # If you run Tomcat on port numbers that are all higher than 1023, then you
 # do not need authbind.  It is used for binding Tomcat to lower port numbers.
 # NOTE: authbind works only with IPv4.  Do not enable it when using IPv6.
