@@ -17,9 +17,6 @@
       path: "{{ folderpath }}"
       state: directory
       mode: 0755
-  
-  - name: download nodejs package setup into directory and run it
-    command: "curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -"
   - name: installing nodejs
     apt:
       name: "{{ item }}"
