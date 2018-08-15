@@ -22,7 +22,7 @@
   - name: restarting tomcat
     service:
       name: tomcat7
-      action: started
+      state: started
   - name: installing additional packages
     apt:
       name: "{{ item }}"
